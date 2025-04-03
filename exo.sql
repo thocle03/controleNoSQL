@@ -81,14 +81,14 @@ SELECT
     q.lead_source,
     c.won_date,
     c.revenue
-FROM leads_qualified q
+FROM olist.leads_qualified q
 LEFT JOIN leads_closed c ON q.mql_id = c.mql_id;
 
 
 /8
 SELECT 
     COUNT(DISTINCT c.mql_id) * 100.0 / COUNT(DISTINCT q.mql_id) AS conversion_rate
-FROM leads_qualified q
+FROM olist.leads_qualified q
 LEFT JOIN olist.leads_closed c ON q.mql_id = c.mql_id;
 
 /9
