@@ -156,7 +156,7 @@ SELECT
 FROM (
     SELECT seller_id, MIN(order_approved_at) AS first_sale_date
     FROM olist.order_items oi
-    JOIN olist.orders_dataset o ON oi.order_id = o.order_id
+    JOIN olist.orders o ON oi.order_id = o.order_id
     GROUP BY seller_id
 ) AS first_sales
 GROUP BY cohort_year, cohort_month
